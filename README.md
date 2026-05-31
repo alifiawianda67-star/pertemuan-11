@@ -49,6 +49,35 @@ Format penyimpanan
                                 no_identitas, 
                                 keluhan,
                                 poliklinik
+# INPUT DARI FILE
+with open("pasien.txt", "r") as file:
+    for baris in file:
+        nama, keluhan, obat = baris.strip().split(",")
+
+        # simpan ke array 1D
+        nama_pasien.append(nama)
+        keluhan_pasien.append(keluhan)
+        obat_pasien.append(obat)
+
+        # simpan ke array 2D
+        data_pasien.append([nama, keluhan, obat])
+# INPUT DARI USER
+jumlah_user = int(input("Masukkan jumlah pasien (USER): "))
+
+for i in range(jumlah_user):
+    print("\nPasien USER ke-", i+1)
+
+    nama = input("Nama: ")
+    keluhan = input("Keluhan: ")
+    obat = input("Obat: ")
+
+    # simpan ke array 1D
+    nama_pasien.append(nama)
+    keluhan_pasien.append(keluhan)
+    obat_pasien.append(obat)
+
+    # simpan ke array 2D
+    data_pasien.append([nama, keluhan, obat])
 # ouput ke file (array 1d )
 nama_pasien = ["eka","tuti","buna"]
 keluhan_pasien = ["Demam", "Batuk", "asma"]
@@ -108,8 +137,9 @@ Nama : buna
 Keluhan : batuk
 Obat : obh
 ----------------
-File hasil_array2.txt berhasil dibuat!
+Jumlah Pasien : 3
 
+File hasil_array2.txt berhasil dibuat!
 
 
 
